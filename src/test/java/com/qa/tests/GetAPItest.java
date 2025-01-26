@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 
 import com.qa.base.TestBase;
 import com.qa.client.RestClient;
+import com.qa.util.TestUtil;
 
 public class GetAPItest extends TestBase{
 	
@@ -40,16 +41,38 @@ public class GetAPItest extends TestBase{
 		RestClient restClient = new RestClient();
 		chr = restClient.get(url);
 		
-				//statuscode
+				//status code
 				int statusCode = chr.getStatusLine().getStatusCode();
 				System.out.println("status code : "+statusCode);
 				
 				Assert.assertEquals(statusCode, RESPONSE_STATUS_CODE_200, "Status code is not 200");
 				
-				//jsonresponse 
+				//json response 
 				String ResponseString = EntityUtils.toString(chr.getEntity(), "UTF-8");
 				JSONObject responseJson = new JSONObject(ResponseString);
 				System.out.println("JSON Response : "+responseJson);
+				
+				//single value assertion from json response
+				String perpagevalue = TestUtil.getValueByJPath(responseJson, "/per_page");
+				System.out.println("value of per page is-->"+ perpagevalue);
+				Assert.assertEquals(Integer.parseInt(perpagevalue), 6);
+				
+				//total:
+				String totalValue = TestUtil.getValueByJPath(responseJson, "/total");
+				System.out.println("value of total is-->"+ totalValue);		
+				Assert.assertEquals(Integer.parseInt(totalValue), 12);
+
+				//get the value from JSON ARRAY:
+				String lastName = TestUtil.getValueByJPath(responseJson, "/data[0]/last_name");
+				String id = TestUtil.getValueByJPath(responseJson, "/data[0]/id");
+				String avatar = TestUtil.getValueByJPath(responseJson, "/data[0]/avatar");
+				String firstName = TestUtil.getValueByJPath(responseJson, "/data[0]/first_name");
+
+				System.out.println(lastName);
+				System.out.println(id);
+				System.out.println(avatar);
+				System.out.println(firstName);
+				
 				
 				//headers
 				Header[] headersArray = chr.getAllHeaders();
