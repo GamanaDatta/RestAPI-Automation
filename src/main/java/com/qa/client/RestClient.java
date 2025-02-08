@@ -8,6 +8,7 @@ import java.util.Map;
 import org.apache.http.Header;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
@@ -82,6 +83,20 @@ public class RestClient {
 			CloseableHttpResponse closebaleHttpResponse = httpClient.execute(httpput);
 			return closebaleHttpResponse;	
 		  
+	}
+	
+	//DeleteMethod
+	public CloseableHttpResponse delete(String url) throws ClientProtocolException, IOException {
+		
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		HttpDelete httpDelete = new HttpDelete(url);
+		 
+		httpDelete.setHeader("Accept", "application/json");
+
+			CloseableHttpResponse closebaleHttpResponse = httpClient.execute(httpDelete);
+		
+			return closebaleHttpResponse;	
+		
 	}
 	
 }

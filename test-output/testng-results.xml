@@ -2,20 +2,20 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-08T08:46:08Z" name="Default suite" finished-at="2025-02-08T08:46:09Z" duration-ms="686">
+  <suite started-at="2025-02-08T10:53:48Z" name="Default suite" finished-at="2025-02-08T10:53:49Z" duration-ms="650">
     <groups>
     </groups>
-    <test started-at="2025-02-08T08:46:08Z" name="Default test" finished-at="2025-02-08T08:46:09Z" duration-ms="686">
-      <class name="com.qa.tests.PutAPItest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.tests.PutAPItest@3cce5371]" started-at="2025-02-08T14:16:08Z" name="setUp" finished-at="2025-02-08T14:16:08Z" duration-ms="4" status="PASS">
+    <test started-at="2025-02-08T10:53:48Z" name="Default test" finished-at="2025-02-08T10:53:49Z" duration-ms="650">
+      <class name="com.qa.tests.DeleteAPItest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.tests.DeleteAPItest@3cce5371]" started-at="2025-02-08T16:23:48Z" name="setUp" finished-at="2025-02-08T16:23:48Z" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="putAPITest()[pri:0, instance:com.qa.tests.PutAPItest@3cce5371]" started-at="2025-02-08T14:16:08Z" name="putAPITest" finished-at="2025-02-08T14:16:09Z" duration-ms="674" status="PASS">
+        <test-method signature="DeleteAPITest()[pri:0, instance:com.qa.tests.DeleteAPItest@3cce5371]" started-at="2025-02-08T16:23:48Z" name="DeleteAPITest" finished-at="2025-02-08T16:23:49Z" duration-ms="627" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- putAPITest -->
-      </class> <!-- com.qa.tests.PutAPItest -->
+        </test-method> <!-- DeleteAPITest -->
+      </class> <!-- com.qa.tests.DeleteAPItest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
